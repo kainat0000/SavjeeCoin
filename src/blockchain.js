@@ -158,8 +158,7 @@ class Blockchain {
    * @param {string} miningRewardAddress
    */
   minePendingTransactions(miningRewardAddress) {
-    const rewardTx = new Transaction(null, miningRewardAddress, this.miningReward);
-    this.pendingTransactions.push(rewardTx);
+    
 
     const block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
     block.mineBlock(this.difficulty);
